@@ -22,12 +22,13 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
-
-
+  'GET /proyect/state/:id': 'proyect/state',
+  'GET /exam/listExamUser/:id' : 'exam/list-exam-user',
+  'GET /exam/takeExam/:id': 'exam/take-exam',
+  'GET /exam/seeExamSolution/:id': 'exam/see-exam-solution',
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
   //  ║║║║╣ ╠╩╗╠═╣║ ║║ ║╠╩╗╚═╗
@@ -39,4 +40,4 @@ module.exports.routes = {
   //  ╩ ╩╩╚═╝╚═╝
 
 
-};
+}

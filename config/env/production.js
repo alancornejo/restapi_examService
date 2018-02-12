@@ -151,11 +151,11 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     cors: {
-      allRoutes: process.env.allRoutes || false ,
-      allowOrigins: process.env.allowOrigins || '' ,
-      allowCredentials: process.env.allowCredentials || true ,
-      allowRequestHeaders: process.env.allowRequestHeaders || '' ,
-      allowResponseHeaders: process.env.allowResponseHeaders || ''
+      allRoutes: (process.env.allRoutes === 'true') ? true : false,
+      allowOrigins: process.env.allowOrigins,
+      allowCredentials: (process.env.allowCredentials === 'true') ? true : false,
+      allowRequestHeaders: process.env.allowRequestHeaders,
+      allowResponseHeaders: process.env.allowResponseHeaders
     },
 
   },
@@ -396,4 +396,4 @@ module.exports = {
 
 
 
-};
+}
