@@ -15,7 +15,8 @@ module.exports = async function listExamUser(req, res) {
   const user = await User.findOne({ id: userID })
   if (!user) res.json(412, { message: 'No existe usuario con id : ' + userID })
 
-  const exams = await Exam.getDatastore().sendNativeQuery('CALL sp_list_exams($1)', [userID])
+  const exams = await Exam.getDatastore().sendNativeQuery('CALL sp_list_exam_user($1)', [userID])
   let json = await sails.helpers.convertJson(exams)
+  json = await sails.helpers.calculateNote(json)
   res.ok(json)
 }

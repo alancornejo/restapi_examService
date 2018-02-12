@@ -14,7 +14,7 @@ module.exports = {
       required: true
     },
 
-    name: {
+    name_complet: {
       type: 'string',
       required: true
     },
@@ -25,8 +25,8 @@ module.exports = {
     },
 
     proyect_id: {
-      type: 'number',
-      required: true
+      required: true,
+      model: 'proyect'
     }
   }
 }

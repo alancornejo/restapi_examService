@@ -26,9 +26,16 @@ module.exports.routes = {
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
   'GET /proyect/state/:id': 'proyect/state',
-  'GET /exam/listExamUser/:id' : 'exam/list-exam-user',
+
   'GET /exam/takeExam/:id': 'exam/take-exam',
+  'GET /exam/listExamUser/:id' : 'exam/list-exam-user',
   'GET /exam/seeExamSolution/:id': 'exam/see-exam-solution',
+  'POST /exam/recordExamResponse': 'exam/record-exam-response',
+
+  'POST /user/validateIfExist': 'user/validate-if-exist',
+  'PATCH /user/updateProyect/:id': 'user/update-proyect',
+
+  'POST /user/authentication': 'user/authentication',
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
   //  ║║║║╣ ╠╩╗╠═╣║ ║║ ║╠╩╗╚═╗
