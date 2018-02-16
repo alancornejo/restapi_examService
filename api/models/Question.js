@@ -17,8 +17,13 @@ module.exports = {
     exam_id: {
       type: 'number',
       required: true
+    },
+
+    name_image: {
+      type: 'string',
+      required: true
     }
   },
 
-};
+}
 

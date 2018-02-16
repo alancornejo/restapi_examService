@@ -15,15 +15,14 @@ module.exports = async function validateIfExist(req, res) {
   const username = parameters.username
 
   const user = await User.find({ username: username }).populate('proyect_id')
-  console.log(user)
+  if (!user) return res.badRequest(`No existe el usuario con username : ${username}`)
 
   if (user.length === 0) {
+    // Setear por default el proyect_id con el valor 1
     parameters.proyect_id = 1
-    const userCreate = await User.create(parameters).fetch()
+    let userCreate = await User.create(parameters).fetch()
+    userCreate = await User.find({ username: userCreate.username }).populate('proyect_id')
     res.status(201)
     res.send(userCreate)
-  } else {
-    res.status(200)
-    res.send(user)
-  }
+  } else  res.ok(user)
 }

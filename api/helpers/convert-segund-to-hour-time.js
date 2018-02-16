@@ -21,7 +21,6 @@ module.exports = {
 
   },
 
-
   fn: async function (inputs, exits) {
 
     const timeBox = { seg: inputs.seg }
@@ -40,15 +39,7 @@ module.exports = {
     result = (timeBox.hrs) ? result.concat(timeBox.hrs, 'hrs ') : result.concat('')
     result = (timeBox.min) ? result.concat(timeBox.min, 'min ') : result.concat('')
     result = (timeBox.seg) ? result.concat(timeBox.seg, 'seg ') : result.concat('')
-
-    console.log('aaaaaaaaaaaaaa')
-    
-    console.log(result)
-    
     return exits.success(result)
-
   }
-
-
 }
 

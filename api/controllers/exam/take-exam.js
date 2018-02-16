@@ -12,16 +12,18 @@
  */
 module.exports = async function takeExam(req, res) {
 
-  const examID = req.param('id')
-  const exams = await Exam.findOne({ id: examID })
-  if (!exams) return res.json(412, { message: 'No existe examen con id : ' + examID })
+  const examId = req.param('id')
+
+  // Validar que el exam_id existe en la BD
+  const exam = await Exam.findOne({ id: examId })
+  if (!exam) return res.badRequest(`No existe el exam con id : ${examId}`)
 
   async function asyncForEach(array, callback) {
     for (let index = 0; index < array.length; index++) await callback(array[index], index, array)
   }
 
   let dataAnswers = {}
-  const questions = await Question.find({ select: ['id', 'name'], where: { exam_id: examID } })
+  const questions = await Question.find({ select: ['id', 'name', 'name_image'], where: { exam_id: examId } })
   dataAnswers = questions
   await asyncForEach(questions, async (question, index) => {
     const answers = await Answer.find({ select: ['id', 'name'], where: { question_id: question.id } })

@@ -49,4 +49,4 @@ module.exports.globals = {
 
   sails: true,
 
-};
+}

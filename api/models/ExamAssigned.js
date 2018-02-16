@@ -1,30 +1,35 @@
 /**
- * DetailResults.js
+ * ExamAssigned.js
  *
  * @description :: A model definition.  Represents a database table/collection/etc.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
 module.exports = {
-  tableName: 'detail_results',
+  tableName: 'exams_assigneds',
 
   attributes: {
-    user_id: {
-      type: 'number',
-      required: true
-    },
-
     exam_id: {
       type: 'number',
       required: true
     },
 
-    question_id: {
+    user_id: {
       type: 'number',
       required: true
     },
 
-    answer_id: {
+    start_date: {
+      type: 'string',
+      required: true
+    },
+
+    expiration_date: {
+      type: 'string',
+      required: true
+    },
+
+    exam_state_id: {
       type: 'number',
       required: true
     }

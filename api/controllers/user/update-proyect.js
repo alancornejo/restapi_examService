@@ -11,17 +11,17 @@
  * Update proyect.
  */
 module.exports = async function updateProyect(req, res) {
+  const userId = req.param('id')
   const parameters = req.allParams()
   const proyectId = parameters.proyect_id
 
-  const userID = req.param('id')
-  const user = await User.findOne({ id: userID })
-  if (!user) res.json(412, { message: 'No existe usuario con id : ' + userID })
+  const user = await User.findOne({ id: userId })
+  if (!user) return res.badRequest(`No existe el usuario con id : ${userId}`)
 
   const proyect = await Proyect.findOne({ id: proyectId })
-  if (!proyect) res.json(412, { message: 'No existe el proyect con id : ' + proyectId })
+  if (!proyect) return res.badRequest(`No existe el proyect con id : ${proyectId}`)
 
-  const record = await User.update({ id: userID }, { proyect_id: proyectId }).fetch()
+  const record = await User.update({ id: userId }, { proyect_id: proyectId }).fetch()
   res.status(204)
   res.send(record)
 }
