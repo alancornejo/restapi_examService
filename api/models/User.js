@@ -21,7 +21,7 @@ module.exports = {
 
     phone_number: {
       type: 'string',
-      required: true
+      required: false
     },
 
     proyect_id: {
