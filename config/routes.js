@@ -16,6 +16,5 @@ module.exports.routes = {
   'POST /exam/recordExamResponse': 'exam/record-exam-response',
   'PATCH /exam/updateExamState': 'exam/update-exam-state',
   'POST /user/validateIfExist': 'user/validate-if-exist',
-  'PATCH /user/updateProyect/:id': 'user/update-proyect',
-  'POST /user/authentication': 'user/authentication',
+  'PATCH /user/updateProyect/:id': 'user/update-proyect'
 }
