@@ -42,7 +42,7 @@ module.exports = async function seeExamSolution(req, res) {
 
     await asyncForEach(questions, async (question, index) => {
       const answers = await Answer.find({ select: ['id', 'name'], where: { question_id: question.id } })
-      const answerRegister = await DetailResult.findOne({ question_id: question.id })
+      const answerRegister = await DetailResult.findOne({ question_id: question.id, user_id: userId })
       const answerCorrect = await Answer.findOne({ question_id: question.id, correction_id: 1 })
       dataAnswers[index]['answer_register'] = (answerRegister) ? answerRegister['answer_id'] : 0
       dataAnswers[index]['answer_correct'] = (answerCorrect) ? answerCorrect['id'] : 0
