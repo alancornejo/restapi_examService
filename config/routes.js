@@ -12,7 +12,7 @@ module.exports.routes = {
   'GET /proyect/state/:id': 'proyect/state',
   'GET /exam/takeExam/:id': 'exam/take-exam',
   'GET /exam/listExamUser/:id' : 'exam/list-exam-user',
-  'GET /exam/seeExamSolution/:id': 'exam/see-exam-solution',
+  'POST /exam/seeExamSolution': 'exam/see-exam-solution',
   'POST /exam/recordExamResponse': 'exam/record-exam-response',
   'PATCH /exam/updateExamState': 'exam/update-exam-state',
   'POST /user/validateIfExist': 'user/validate-if-exist',

@@ -24,5 +24,8 @@ module.exports = async function validateIfExist(req, res) {
     userCreate = await User.find({ username: userCreate.username }).populate('proyect_id')
     res.status(201)
     res.send(userCreate)
-  } else  res.ok(user)
+  } else  {
+    const userUpdate = await User.update({ username: username }, parameters).fetch()
+    res.ok(userUpdate)
+  }
 }

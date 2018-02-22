@@ -20,12 +20,14 @@ module.exports = {
     },
 
     start_date: {
-      type: 'string',
+      type: 'ref',
+      columnType: 'datetime',
       required: true
     },
 
     expiration_date: {
-      type: 'string',
+      type: 'ref',
+      columnType: 'datetime',
       required: true
     },
 
