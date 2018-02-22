@@ -10,7 +10,7 @@
 
 module.exports.routes = {
   'GET /proyect/state/:id': 'proyect/state',
-  'GET /exam/takeExam/:id': 'exam/take-exam',
+  'POST /exam/takeExam': 'exam/take-exam',
   'GET /exam/listExamUser/:id' : 'exam/list-exam-user',
   'POST /exam/seeExamSolution': 'exam/see-exam-solution',
   'POST /exam/recordExamResponse': 'exam/record-exam-response',

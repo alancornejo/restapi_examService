@@ -23,14 +23,13 @@ module.exports = async function seeExamSolution(req, res) {
   const exam = await Exam.findOne({ id: examId })
   if (!exam) return res.badRequest(`No existe el exam con id : ${examId}`)
 
-  // Validar que el examId existe en la BD
   const examAssigned = await ExamAssigned.findOne({ exam_id: examId, user_id: userId })
   if (!examAssigned) return res.badRequest(`No existe examn assigend con id : ${examId}, que se encuentre asignado al user : ${userId}`)
 
   const isAllowed = moment().isAfter(examAssigned.expiration_date)
   const expirationDate = moment(examAssigned.expiration_date).format('MMMM Do YYYY, hh:mm:ss a')
   let dataAnswers = {
-    message: `La solucion del examen solo podra ser visto a partir de : ${expirationDate}`
+    message: `La solucion del examen se podra visualizar a partir del ${expirationDate}`
   }
 
   if (isAllowed) {
